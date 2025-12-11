@@ -1,0 +1,55 @@
+{
+  "name": "vidhyaapp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@wysimark/react": "^3.0.20",
+    "concurrently": "^8.2.2",
+    "express": "^4.19.2",
+    "lucide-react": "^0.544.0",
+    "phaser": "^3.90.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^10.1.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.9.3",
+    "react-scripts": "5.0.1",
+    "react-syntax-highlighter": "^16.1.0",
+    "redux": "^5.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
+    "web-vitals": "^2.1.4",
+    "wysimark": "^0.2.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
