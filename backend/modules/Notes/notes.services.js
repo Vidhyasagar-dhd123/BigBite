@@ -9,7 +9,7 @@ const createNote = async (noteData) => {
         }
         const note = new Note({
             title: noteData.title,
-            content: noteData.content,
+            content: `# ${noteData.title}\n\n---\n\n`,
             chapter: chapter._id
         });
         await note.save();

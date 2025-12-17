@@ -5,6 +5,7 @@ import connectDB from './config/db.config.js';
 import todoRoutes from './modules/Todo/todo.routes.js';
 import aiChatRoutes from './modules/ChatAI/chat.routes.js';
 import notesRoutes from './modules/Notes/notes.routes.js';
+import tutorRoutes from './modules/EnglishTutor/tutor.route.js'
 
 dotenv.config();
 await connectDB();
@@ -27,6 +28,8 @@ app.use("/api",todoRoutes)
 app.use("/api",aiChatRoutes)
 
 app.use("/api", notesRoutes);
+
+app.use('/api',tutorRoutes)
 
 app.listen(PORT,()=>
 {

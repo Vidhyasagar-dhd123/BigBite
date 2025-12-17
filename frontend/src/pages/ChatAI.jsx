@@ -165,7 +165,7 @@ const ChatAI = () => {
                 {page.title}
                 <button>
                   <TrashIcon
-                    className="ml-2 text-red-500"
+                    className="ml-2 hover:text-red-500 text-gray-300"
                     onClick={async (e) => {
                       e.stopPropagation();
                       try {

@@ -278,7 +278,7 @@ export const Todo = ()=>{
                                 />
                                 <TodoButton onClick={() => editTodo(editableTodo._id)}>Save</TodoButton></>
                             ) : (
-                                <div className="flex-grow">{todo.title}</div>
+                                <div className="flex-grow text-sm md:text-lg">{todo.title}</div>
                             )}
                             <TodoEditButton onClick={() => setEditableTodo(todo)} />
                             <TodoDeleteButton onClick={() => removeTodo(todo._id)} />

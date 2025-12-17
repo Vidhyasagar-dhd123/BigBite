@@ -20,7 +20,7 @@ export const ChatAIHeader = React.memo(({children}) => {
 })
 
 export const ChatAIBody = React.memo(({children}) => {
-    return (<div className="w-full h-full overflow-y-auto p-4 max-w-6xl">{children}</div>)
+    return (<div className="w-full h-full overflow-y-auto max-w-6xl">{children}</div>)
 }
 )
 export const ChatAIFooter = ({children}) => {
@@ -41,8 +41,8 @@ export const ChatAIInput = ({value, onChange, onKeyDown}) => {
 
 export const ChatAIMessage = ({message, isUser}) => {
     return (
-        <div className={`w-full flex ${isUser ? 'justify-end' : 'justify-start'} mb-4 p-4`}>
-            <div className={`rounded-lg px-10 py-4 ${isUser ? 'bg-blue-200 text-white' : ' text-blue-800 overflow-x-auto'}`}>
+        <div className={`w-full flex ${isUser ? 'justify-end' : 'justify-start'} m-0 md:mb-4 md:p-4 p-0`}>
+            <div className={`rounded-lg p-4 ${isUser ? 'bg-blue-200 text-white' : ' text-blue-800 overflow-x-auto'}`}>
                 <MarkdownRenderer>{message}</MarkdownRenderer>
             </div>
         </div>
@@ -126,7 +126,7 @@ function MarkdownRenderer({ children: markdown }) {
 
 export const ChatNavigator = ({messages=[]})=>{
     return <div>
-    {   messages.length===0?<div className='text-gray-500 p-2 m-2 rounded'>You Did Not Ask Any Question</div>:
+    {   messages.length===0?<div className='text-gray-500 p-2 m-2 rounded bg-white'>You Did Not Ask Any Question</div>:
         messages.map((msg,id)=>{
             if(msg.role==="user")
                 return <div key={id} className='bg-gray-200 p-2 m-2 rounded'><a href={`#${id}`}>{msg.text.slice(0,50)}...</a></div>

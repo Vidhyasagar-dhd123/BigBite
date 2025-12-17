@@ -8,7 +8,7 @@ import NotesBreadCrumb from "../components/NotesBreadCrumb";
 import { TrashIcon, Calendar } from "lucide-react";
 
 const Notes = () => {
-    const [markdown, setMarkdown] = useState("# Welcome to Notes\n\nThis is a simple note-taking application using Wysimark.");
+    const [markdown, setMarkdown] = useState("# Welcome to Notes\n\n---\n\n Start writing your note here...");
     const [title, setTitle] = useState("New Note");
     const {chapterID} = useParams();
     const [newNoteTitle,setNewNoteTitle]=useState("");
@@ -113,7 +113,7 @@ const Notes = () => {
                     } catch {
                         console.log("Failed to delete note");
                     }
-                }}> <TrashIcon className="w-5 h-5 text-red-600" /> </button>
+                }}> <TrashIcon className="w-5 h-5 text-gray-300 hover:text-red-500" /> </button>
             </div>
         ));
     }
@@ -121,11 +121,11 @@ const Notes = () => {
 
     return (
         <div className=" flex flex-col items-center relative">
-            <div className="p-4 min-h-[100svh] h-full max-w-6xl w-full">
-                <div className="flex justify-between">
+            <div className="min-h-[100svh] h-full max-w-6xl w-full">
+                <div className="flex justify-between p-4">
                 <Sidebar title={notes[0]?.chapter?.title}>
                     {renderNotesList}
-                    <input type="text" placeholder="New Note Title" value={newNoteTitle} onChange={(e)=>setNewNoteTitle(e.target.value)} className="w-full p-2 border border-gray-300 rounded mt-4" />
+                    <input type="text" placeholder="New Note Title" value={newNoteTitle} onChange={(e)=>setNewNoteTitle(e.target.value)} className="w-full p-2 rounded mt-4" />
                     <button onClick={async ()=>{
                         setTitle(newNoteTitle);
                         await createNote();
@@ -158,6 +158,6 @@ function WysimarkExample({value,setValue}) {
 
 
   return <>
-  <Editable className="h-full max-h-[100svh] min-h-[80svh] " editor={editor} value={value} onChange={setValue} />
+  <Editable className="h-full max-h-[100svh] min-h-[80svh] " editor={editor} value={value} onChange={setValue}/>
   </>;
 }

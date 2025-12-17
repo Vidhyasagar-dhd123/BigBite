@@ -13,6 +13,7 @@ const Navbar = () => {
                     <NavLink to="/chat/new" className={({ isActive }) => isActive ? "text-white font-semibold" : "text-gray-300 hover:text-white"}>Chat AI</NavLink>
                     <NavLink to="/todo" className={({ isActive }) => isActive ? "text-white font-semibold" : "text-gray-300 hover:text-white"}>To-Do</NavLink>
                     <NavLink to="/notes/new" className={({ isActive }) => isActive ? "text-white font-semibold" : "text-gray-300 hover:text-white"}>Notes</NavLink>
+                    <NavLink to="/english-tutor" className={({ isActive }) => isActive ? "text-white font-semibold" : "text-gray-300 hover:text-white"}>English Tutor</NavLink>
                 </div>
             </div>
         </nav>

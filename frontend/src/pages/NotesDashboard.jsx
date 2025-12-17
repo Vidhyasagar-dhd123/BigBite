@@ -107,19 +107,19 @@ const NotesDashboard = () => {
     const renderChapterList = useMemo(() => {
         console.log("Rendering chapter list:", chapters);
         return chapters.map((group) => (
-          <>
-            <div key={group._id} className={`text-lg font-bold p-2 my-4 ${subject === group._id ? "bg-gray-200" : ""}`} onClick={()=>setSubject(group._id)}>
+          <div key={group._id} className="">
+            <div className={`text-sm font-bold p-2 text-blue-600 bg-blue-50 ${subject === group._id ? "bg-gray-200" : ""}`} onClick={()=>setSubject(group._id)}>
                 {group._id}</div>
             {group.chapters.map((chapter) => (
                 <div
                       key={chapter._id}
                       onClick={() => navigate(`/notes/${chapter._id}`)}
-                      className="p-2 border-b text-sm cursor-pointer hover:bg-gray-100 flex justify-between"
+                      className="p-2 border-b text-md cursor-pointer hover:bg-gray-100 flex justify-between pl-4"
                     >
                       {chapter.title}
                       <button>
                         <TrashIcon
-                          className="ml-2 text-red-500"
+                          className="ml-2 hover:text-red-500 text-gray-300"
                           onClick={async (e) => {
                             e.stopPropagation();
                             try {
@@ -135,7 +135,7 @@ const NotesDashboard = () => {
                       </button>
                     </div>
             ))}
-          </>
+          </div>
         ));
     }, [chapters,subject]);
 
@@ -153,21 +153,21 @@ const NotesDashboard = () => {
                         onChange={(e) => setNewChapterTitle(e.target.value)}
                         onKeyDown={handleCreateChapter}
                         placeholder="Add a chat page..."
-                        className="w-full p-2 border border-gray-300 text-sm outline-none"
+                        className="w-full p-2 border-b border-gray-300 text-sm outline-none"
                         />
                 <input
                     type="text"
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     placeholder="Subject"
-                    className="w-full p-2 border border-gray-300 text-sm outline-none"
+                    className="w-full p-2 border-b border-gray-300 text-sm outline-none"
                 />
             </Sidebar>
             <h1 className="text-2xl font-bold mb-4 ml-4 mt-4">
                 <Breadcrumb data={chapters} chapterId={id} />
             </h1>
             </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pb-8 pt-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pb-8 pt-4 max-h-screen overflow-y-auto">
                     {/* Create New Card */}
                     {id!=="new" && <div onClick={()=>{navigate(`/notes/${id}/new`)}} className="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden w-full max-w-sm mx-4 my-4 cursor-pointer flex items-center justify-center h-64">
                         {/* Subtle gradient accent */}

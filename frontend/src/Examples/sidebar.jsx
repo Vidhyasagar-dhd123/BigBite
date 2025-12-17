@@ -27,7 +27,7 @@ const Sidebar = ({children,title}) => {
         <SidebarOpen />
       </button>
       {isOpen && (
-        <div ref={sidebarRef} className='shadow  max-h-screen overflow-y-auto pb-24' style={{ width: '200px', height: '100%', background: '#fff', position: 'absolute', top: 0, left: 0, transition: 'transform 0.3s ease-in-out', zIndex: 1000 }}>
+        <div ref={sidebarRef} className='shadow min-w-[300px] max-w-[300px] max-h-screen overflow-y-auto pb-24' style={{  height: '100%', background: '#fff', position: 'absolute', top: 0, left: 0, transition: 'transform 0.3s ease-in-out', zIndex: 1000 }}>
           <div className="font-bold text-lg p-2 border-b">{title}</div>
           {children}
         </div>
